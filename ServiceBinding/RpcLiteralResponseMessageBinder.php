@@ -32,7 +32,7 @@ class RpcLiteralResponseMessageBinder implements MessageBinderInterface
     {
         $this->typeRepository = $typeRepository;
 
-        return $this->processType($messageDefinition->getOutput()->get($messageDefinition->getOutput()->getName())->getType(), $message);
+        return $this->processType($messageDefinition->getOutput()->get($messageDefinition->getName()."Result")->getType(), $message);
     }
 
     private function processType($phpType, $message)
